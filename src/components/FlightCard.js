@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { connect } from 'react-redux';
 import { fetchAddFavCard, fetchRemoveFavCard } from "../actions";
 import FlightCardRoute from "./FlightCardRoute";
@@ -8,25 +8,32 @@ import FlightCardPrice from "./FlightCardPrice";
 import FlightCardImg from "./FlightCardImg";
 import FlightCardLikeBtn from "./FlightCardLikeBtn";
 
-function FlightCard({ card, isLast, removeFavStoreCard, addFavCardToStore }) {
+function FlightCard({ card, isLast, removeFavStoreCard, addFavCardToStore, navigation }) {
   const lastChildStyle = isLast && {marginBottom: 20};
 
-  function handleClick() {
+  function handlePressLike() {
     card.isMarked ? removeFavStoreCard(card) : addFavCardToStore(card);
   }
 
+  function handlePress(card) {
+    navigation.navigate('Flight')
+  }
+
   return (
-    <View style={[styles.card, styles.boxShadow, lastChildStyle]}>
+    <TouchableOpacity 
+      style={[styles.card, styles.boxShadow, lastChildStyle]}
+      onPress={handlePress}
+    >
       <View style={styles.row}>
         <FlightCardImg />
-        <View style={styles.column}> 
+        <View style={styles.column}>
           <FlightCardRoute card={card} />
           <FlightCardDeparture card={card} />
         </View>
         <FlightCardLikeBtn card={card}/>
       </View>
       <FlightCardPrice card={card}/>
-    </View>
+    </TouchableOpacity>
   );
 }
 

@@ -6,7 +6,7 @@ function FlightCardDeparture({ card }) {
   return (
     <>
       <View style={styles.container}>
-        <Text style={styles.text}>{card.airport}</Text>
+        <Text style={styles.text}>{card.departurePort}</Text>
         <DashSvg height={1} width={9} style={styles.dash}/>
         <Text style={styles.text}>{card.date}</Text>
         <DashSvg height={1} width={9} style={styles.dash}/>

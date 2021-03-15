@@ -5,7 +5,6 @@ import {
   REMOVE_ALL_ITEMS,
 } from "../utils/constants"
 import flightsRequest from "../utils/SkyscannerApi";
-import apiRequest from "../utils/api";
 import { formatEnDate } from "../utils/utils";
 
 export const addFlightCardsRequest = () => {

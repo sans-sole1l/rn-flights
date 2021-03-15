@@ -1,32 +1,34 @@
-import img01 from '../images/ny1.jpg';
-import img02 from '../images/ny2.jpg';
-import img03 from '../images/ny3.jpg';
 
 export const images = [
   {
     name: 'New York',
-    link: img01,
+    link: require('../images/ny4.png'),
     _id: 1,
   },
   {
     name: 'New York',
-    link: img02,
+    link: require('../images/ny5.png'),
     _id: 2,
   },
   {
     name: 'New York',
-    link: img03,
+    link: require('../images/ny4.png'),
     _id: 3,
   },
   {
     name: 'New York',
-    link: img01,
+    link: require('../images/ny5.png'),
     _id: 4,
   },
   {
     name: 'New York',
-    link: img02,
+    link: require('../images/ny4.png'),
     _id: 5,
+  },
+  {
+    name: 'New York',
+    link: require('../images/ny5.png'),
+    _id: 6,
   },
 ]
 
@@ -39,7 +41,9 @@ export const flightCards = [
     airlines: 'Aeroflot',
     price: '23 924 ₽',
     _id: 1,
-    airport: 'VKO',
+    departurePort: 'VKO',
+    arrivalPort: 'JFK',
+    boarding: '19:20',
   },
   {
     departure: 'Moscow',
@@ -49,7 +53,9 @@ export const flightCards = [
     airlines: 'Aeroflot',
     price: '23 924 ₽',
     _id: 2,
-    airport: 'VKO',
+    departurePort: 'VKO',
+    arrivalPort: 'JFK',
+    boarding: '19:20',
   },
   {
     departure: 'Moscow',
@@ -59,7 +65,9 @@ export const flightCards = [
     airlines: 'Aeroflot',
     price: '23 924 ₽',
     _id: 3,
-    airport: 'VKO',
+    departurePort: 'VKO',
+    arrivalPort: 'JFK',
+    boarding: '19:20',
   },
   {
     departure: 'Moscow',
@@ -69,7 +77,9 @@ export const flightCards = [
     airlines: 'Aeroflot',
     price: '23 924 ₽',
     _id: 4,
-    airport: 'VKO',
+    departurePort: 'VKO',
+    arrivalPort: 'JFK',
+    boarding: '19:20',
   },
   {
     departure: 'Moscow',
@@ -79,7 +89,9 @@ export const flightCards = [
     airlines: 'Aeroflot',
     price: '23 924 ₽',
     _id: 5,
-    airport: 'VKO',
+    departurePort: 'VKO',
+    arrivalPort: 'JFK',
+    boarding: '19:20',
   },
   {
     departure: 'Moscow',
@@ -89,7 +101,9 @@ export const flightCards = [
     airlines: 'Aeroflot',
     price: '23 924 ₽',
     _id: 6,
-    airport: 'VKO',
+    departurePort: 'VKO',
+    arrivalPort: 'JFK',
+    boarding: '19:20',
   },
   {
     departure: 'Moscow',
@@ -99,7 +113,9 @@ export const flightCards = [
     airlines: 'Aeroflot',
     price: '23 924 ₽',
     _id: 7,
-    airport: 'VKO',
+    departurePort: 'VKO',
+    arrivalPort: 'JFK',
+    boarding: '19:20',
   },
   {
     departure: 'Moscow',
@@ -109,7 +125,9 @@ export const flightCards = [
     airlines: 'Aeroflot',
     price: '23 924 ₽',
     _id: 8,
-    airport: 'VKO',
+    departurePort: 'VKO',
+    arrivalPort: 'JFK',
+    boarding: '19:20',
   },
   {
     departure: 'Moscow',
@@ -119,6 +137,8 @@ export const flightCards = [
     airlines: 'Aeroflot',
     price: '23 924 ₽',
     _id: 9,
-    airport: 'VKO',
+    departurePort: 'VKO',
+    arrivalPort: 'JFK',
+    boarding: '19:20',
   },
 ]

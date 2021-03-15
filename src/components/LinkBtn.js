@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
-export default function LinkBtn({ title }) {
+export default function LinkBtn({ title, navigation, borderStyle }) {
   return (
-    <TouchableOpacity>
-      <View style={styles.container}>
+    <TouchableOpacity onPress={() => navigation.navigate(title)}>
+      <View style={[styles.container, borderStyle]}>
         <Text style={styles.text}>{title}</Text>
       </View>
     </TouchableOpacity>
@@ -16,9 +16,6 @@ const styles = StyleSheet.create({
     paddingBottom: 7,
     height: 30,
     width: 148,
-    borderBottomWidth: 3,
-    borderColor: '#1157A7',
-    borderRadius: 2,
   },
   text: {
     textAlign: 'center',

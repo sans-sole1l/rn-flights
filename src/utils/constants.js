@@ -28,6 +28,12 @@ export const EN_MONTHS = [
   "December"
 ];
 
+export const LINK_BORDER_STYLE = {
+  borderBottomWidth: 3,
+  borderColor: '#1157A7',
+  borderRadius: 2,
+}
+
 export const ADD_FLIGHT_CARDS_REQUESTED = 'ADD_FLIGHT_CARDS_REQUESTED';
 export const REMOVE_ALL_ITEMS = 'REMOVE_ALL_ITEMS';
 export const ADD_FLIGHT_CARDS_SUCCEEDED = 'ADD_FLIGHT_CARDS_SUCCEEDED';
