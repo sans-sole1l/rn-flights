@@ -1,18 +1,3 @@
-export const MONTHS = [
-  "января",
-  "февраля",
-  "марта",
-  "апреля",
-  "мая",
-  "июня",
-  "июля",
-  "августа",
-  "сентября",
-  "октября",
-  "ноября",
-  "декабря"
-];
-
 export const EN_MONTHS = [
   "January",
   "February",
@@ -35,6 +20,8 @@ export const LINK_BORDER_STYLE = {
 }
 
 export const ADD_FLIGHT_CARDS_REQUESTED = 'ADD_FLIGHT_CARDS_REQUESTED';
-export const REMOVE_ALL_ITEMS = 'REMOVE_ALL_ITEMS';
+export const CLEAR_STATE = 'CLEAR_STATE';
 export const ADD_FLIGHT_CARDS_SUCCEEDED = 'ADD_FLIGHT_CARDS_SUCCEEDED';
 export const ADD_FLIGHT_CARDS_FAILED = 'ADD_FLIGHT_CARDS_FAILED';
+export const ADD_FAV_CARD = 'ADD_FAV_CARD';
+export const ADD_CUR_CARD = 'ADD_CUR_CARD';

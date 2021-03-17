@@ -1,14 +1,16 @@
+import { currentMonth } from './utils';
+
 export class SkyscannerApi {
   constructor(config) {
     this._url = config.url;
   }
 
-  getFlights(date) {
-    return fetch(`${this._url}/apiservices/browseroutes/v1.0/RU/RUB/en-US/SVO-sky/JFK-sky/${date}`, {
+  getFlights() {
+    return fetch(`${this._url}/apiservices/browseroutes/v1.0/RU/RUB/en-US/SVO-sky/JFK-sky/${currentMonth}`, {
         method: 'GET',
         headers: {
           "x-rapidapi-key": apiKey,
-          "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+          "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"
         }
       }
     )

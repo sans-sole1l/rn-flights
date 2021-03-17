@@ -1,22 +1,19 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { connect } from 'react-redux';
-import { fetchAddFavCard, fetchRemoveFavCard } from "../actions";
+import { updateCurrentCard } from "../redux/actions";
 import FlightCardRoute from "./FlightCardRoute";
 import FlightCardDeparture from "./FlightCardDeparture";
 import FlightCardPrice from "./FlightCardPrice";
 import FlightCardImg from "./FlightCardImg";
 import FlightCardLikeBtn from "./FlightCardLikeBtn";
 
-function FlightCard({ card, isLast, removeFavStoreCard, addFavCardToStore, navigation }) {
+function FlightCard({ card, isLast, setCurrentCard, navigation }) {
   const lastChildStyle = isLast && {marginBottom: 20};
 
-  function handlePressLike() {
-    card.isMarked ? removeFavStoreCard(card) : addFavCardToStore(card);
-  }
-
-  function handlePress(card) {
-    navigation.navigate('Flight')
+  function handlePress() {
+    setCurrentCard(card);
+    navigation.navigate('Flight');
   }
 
   return (
@@ -30,7 +27,7 @@ function FlightCard({ card, isLast, removeFavStoreCard, addFavCardToStore, navig
           <FlightCardRoute card={card} />
           <FlightCardDeparture card={card} />
         </View>
-        <FlightCardLikeBtn card={card}/>
+        <FlightCardLikeBtn card={card} />
       </View>
       <FlightCardPrice card={card}/>
     </TouchableOpacity>
@@ -65,8 +62,7 @@ const styles = StyleSheet.create({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addFavCardToStore: item => dispatch(fetchAddFavCard(item)),
-  removeFavStoreCard: item => dispatch(fetchRemoveFavCard(item)),
+  setCurrentCard: item => dispatch(updateCurrentCard(item)),
 });
 
 export default (connect(null, mapDispatchToProps))(FlightCard);

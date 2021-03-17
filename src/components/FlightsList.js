@@ -1,28 +1,30 @@
 import React from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
-import { connect } from 'react-redux'
+import { View, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
 import FlightCard from './FlightCard';
 
-function FlightsList({ cards, navigation }) {
+function FlightsList({ cards, navigation, loading }) {
   return (
     <View style={styles.container}>
-      <FlatList
-        data={cards}
-        renderItem={
-          ({item, index}) => {
-            return <FlightCard 
-              card={item} 
-              key={item._id} 
-              isLast={index === cards.length - 1} 
-              navigation={navigation}
-            />
+      {loading ?
+        <ActivityIndicator size="large" style={styles.spinner} /> :
+        <FlatList
+          data={cards}
+          renderItem={
+            ({item, index}) => {
+              return <FlightCard 
+                card={item} 
+                key={item._id} 
+                isLast={index === cards.length - 1} 
+                navigation={navigation}
+              />
+            }
           }
-        }
-        keyExtractor={item => item._id.toString()}
-        initialNumToRender={8}
-        maxToRenderPerBatch={8}
-        onEndReachedThreshold={0.5}
-      />
+          keyExtractor={item => item._id.toString()}
+          initialNumToRender={8}
+          maxToRenderPerBatch={8}
+          onEndReachedThreshold={0.5}
+        />
+      }
     </View>
   )
 } 
@@ -35,12 +37,12 @@ const styles = StyleSheet.create({
     minHeight: '100%',
     maxHeight: '100%',
     paddingBottom: 70,
+  },
+  spinner: {
+    position: 'absolute',
+    top: '40%',
+    left: '46%',
   }
 });
 
-const mapStateToProps = (state) => ({
-  stateCards: state.cardsData,
-  loading: state.loading,
-});
-
-export default (connect(mapStateToProps))(FlightsList);
+export default FlightsList;
