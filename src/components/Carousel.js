@@ -28,5 +28,6 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 25,
     marginBottom: 35,
+    overflow: 'visible',
   },
 })

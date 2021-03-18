@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Image, ScrollView } from 'react-native';
+import { View, StyleSheet, Image, ScrollView, StatusBar } from 'react-native';
 import { connect } from 'react-redux';
 import { images } from '../utils/data';
 import Carousel from './Carousel';
@@ -10,6 +10,7 @@ import FlightRoute from './FlightRoute';
 function FlightScreen({ card }) {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
+      <StatusBar barStyle='light-content' />
       <Image source={require('../images/main-flight.png')} style={styles.mainImg}/>
       <View style={styles.container}>
         <FlightCardLikeBtn card={card} positionStyle={styles.posAbsolute} />
