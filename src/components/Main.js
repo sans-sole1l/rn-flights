@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './HomeScreen';
 import FavouritesScreen from './FavouritesScreen';
 import FlightScreen from './FlightScreen';
-import { fetchSearchCards } from '../redux/actions/index';
+import { addFlightCardsRequest } from '../redux/actions/index';
 
 function Main({ searchCards }) {
   const Stack = createStackNavigator();
@@ -44,7 +44,7 @@ function Main({ searchCards }) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  searchCards: () => dispatch(fetchSearchCards()),
+  searchCards: () => dispatch(addFlightCardsRequest()),
 });
 
 export default (connect(null, mapDispatchToProps))(Main);

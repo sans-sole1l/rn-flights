@@ -1,13 +1,15 @@
 import React from 'react';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
-import { handleAddFavCard, handleRemoveFavCard } from "../redux/actions";
+import { addFavCard, removeFavCard } from "../redux/actions";
 import LikeSvg from '../images/favbtn.svg';
 import LikeSvgActive from '../images/favbtn-active.svg';
 
 function FlightCardLikeBtn({ card, positionStyle, addFavCardToStore, removeFavStoreCard }) {
   function handlePressLike() {
-    card.isLiked ? removeFavStoreCard(card) : addFavCardToStore(card);
+    card.isLiked ? 
+    removeFavStoreCard({...card, isLiked: false}) :
+    addFavCardToStore({...card, isLiked: true});
   }
 
   return (
@@ -25,8 +27,8 @@ const styles = StyleSheet.create({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addFavCardToStore: item => dispatch(handleAddFavCard(item)),
-  removeFavStoreCard: item => dispatch(handleRemoveFavCard(item)),
+  addFavCardToStore: item => dispatch(addFavCard(item)),
+  removeFavStoreCard: item => dispatch(removeFavCard(item)),
 });
 
 export default (connect(null, mapDispatchToProps))(FlightCardLikeBtn);

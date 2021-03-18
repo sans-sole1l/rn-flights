@@ -14,7 +14,6 @@ function FlightCardDeparture({ card }) {
       </View>
       <Text style={styles.text}>{card.airlines}</Text>
     </>
-    
   );
 }
 
